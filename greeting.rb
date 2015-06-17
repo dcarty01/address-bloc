@@ -1,4 +1,7 @@
-puts "Hey Sterling"
-puts "Hey Cheryl"
-puts "Hey Lana"
+def greeting
 
+  ARGV.each do |arg|
+    puts "Hey #{arg}!"
+  end
+
+end
