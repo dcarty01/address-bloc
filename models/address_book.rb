@@ -22,9 +22,11 @@ class AddressBook
     @entries.insert(index, Entry.new(name, phone, email))
   end
 
-  def remove_entry(entry)
-    @entries = [ ]
-    entries.pop
+  def remove_entry(entry_to_remove)
+    @entries.delete_if do |entry|
+    #  puts "entry is #{entry.inspect}"
+      entry.name == entry_to_remove.name
+    end 
   end
 
 end
