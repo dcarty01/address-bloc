@@ -124,14 +124,16 @@ def view_entry_number
 
   system "clear"
 
-  if(selection.is_a Integer)
-    if (selection >= 0)
-      puts @address_book.entries .to_s
+  if(selection.is_a? Integer)
+    puts "im at line 128"
+    if (selection >= 0 && selection < @address_book.entries.size)
+      puts @address_book.entries[selection]
     else
       puts "Sorry, that entry does not exist."
     end
   elsif selection == "exit"
-    system = "clear"
+    puts "im at line 135"
+    system "clear"
     main_menu
   end
 end
