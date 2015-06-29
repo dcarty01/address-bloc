@@ -145,6 +145,14 @@ def entry_submenu(entry)
   end
 end
 
+def demolish
+    puts @address_book.entries.size()
+    while @address_book.entries.size > 0
+      delete_entry(@address_book.entries.pop)
+    end
+    puts "All entries have been deleted."
+  end
+  
 def delete_entry(entry)
   @address_book.entries.delete(entry)
   puts "#{entry.name} has been deleted"
